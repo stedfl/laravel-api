@@ -26,3 +26,19 @@ main {
     height: calc(100vh - 57px);
     background-color: #f3f3f9;
 }
+
+.show.container {
+    height: calc(100vh - 100px);
+    .dc-card {
+        border-radius: 0.375rem;
+        border: 2px solid rgba(0, 0, 0, 0.175);
+        img {
+            max-height: 500px;
+            max-width: 100%;
+            object-fit: cover;
+        }
+        .card-body {
+            min-width: 500px;
+        }
+    }
+}
