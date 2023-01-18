@@ -1,2 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    .nav-item a {
+        color:#405189
+    }
+}
+
+.side-bar {
+    background-color: #405189;
+}
+
+.side-bar {
+    height: 100vh;
+}
