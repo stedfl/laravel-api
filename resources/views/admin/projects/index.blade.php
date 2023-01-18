@@ -11,6 +11,14 @@
                 <h1 class="me-5 fs-5">LISTA PROGETTI</h1>
                 <a class="btn btn-success" href="{{route('admin.projects.create')}}"><i class="fa-solid fa-plus"></i></a>
             </div>
+            @if(session('is_deleted'))
+                <div class="alert alert-success" role="alert">
+                    {{session('is_deleted')}}
+                </div>
+            @endif
+
+
+
             <table class=" table bg-white table-striped">
                 <thead>
                     <tr>
@@ -31,6 +39,7 @@
                                         class="fa-solid fa-eye"></i></a>
                                 <a class="btn btn-warning" title="edit" href="{{route('admin.projects.edit', $project)}}"><i
                                         class="fa-solid fa-pen"></i></i></a>
+                                @include('admin.partials.delete-form')
                             </td>
                         </tr>
                     @endforeach

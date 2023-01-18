@@ -15,8 +15,11 @@
                 <ul class="ps-0">
                     <li class="text-capitalize"><span class="fw-semibold"><i class="fa-solid fa-building me-1"></i>Cliente:</span> {{ $project->client_name }}</li>
                 </ul>
-                <a class="btn btn-warning mt-5" title="edit" href="{{route('admin.projects.edit', $project)}}"><i
-                    class="fa-solid fa-pen"></i></i></a>
+                <div class="buttons mt-5">
+                    <a class="btn btn-warning" title="edit" href="{{route('admin.projects.edit', $project)}}"><i
+                        class="fa-solid fa-pen"></i></i></a>
+                    @include('admin.partials.delete-form')
+                </div>
             </div>
         </div>
         <div class="actions my-4">

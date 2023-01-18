@@ -23,6 +23,7 @@
                 <div class="mb-3">
                     <label for="summary" class="form-label">Riepilogo</label>
                     <textarea class="form-control" name="summary" id="summary" placeholder="Scrivi qui il riepilogo">
+                        {{ old('summary') }}
                     </textarea>
                 </div>
                 <div class="mb-3">
