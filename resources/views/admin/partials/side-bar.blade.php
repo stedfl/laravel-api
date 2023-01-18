@@ -12,7 +12,7 @@
                 <i class="fa-solid fa-chart-column"></i> Dashboard</a>
             </li>
             <li class="my-2">
-                <a class="text-white " href="#"><i class="fa-solid fa-lightbulb">
+                <a class="text-white " href="{{ route('admin.projects.index')}}"><i class="fa-solid fa-lightbulb">
                 </i> Progetti</a>
             </li>
         </ul>

@@ -21,3 +21,8 @@ header {
 .side-bar {
     height: 100vh;
 }
+
+main {
+    height: calc(100vh - 57px);
+    background-color: #f3f3f9;
+}

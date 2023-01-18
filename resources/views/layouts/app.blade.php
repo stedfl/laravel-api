@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Portfolio @yield('title')</title>
 
 
     <!-- Fonts -->
@@ -29,13 +29,13 @@
         <div class="container-fluid p-0">
             <div class="row">
                 @auth()
-                    <div class="col-2 px-0">
+                    <div class="col-2 p-0">
                         @include('admin.partials.side-bar')
                     </div>
                 @endauth
-                <div class="@auth col-10 px-0 @endauth">
+                <div class="@auth col-10 p-0 @endauth">
                     @include('admin.partials.header')
-                    <main class="">
+                    <main>
                         @yield('content')
                     </main>
                 </div>
