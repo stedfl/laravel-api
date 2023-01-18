@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->string('slug', 170)->unique();
+            $table->string('name', 60);
+            $table->string('slug', 70)->unique();
             $table->string('client_name', 50);
             $table->text('summary');
             $table->string('cover_image');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\StoreProjectRequest;
+use App\Http\Requests\Auth\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -35,7 +37,7 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
         $project_form = $request->all();
         $project_form['slug'] = Project::generateSlug($project_form['name']);
@@ -77,10 +79,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
         $project_form = $request->all();
-        if($project_form['name'] != $project['name']) {
+        if ($project_form['name'] != $project['name']) {
             $project_form['slug'] = Project::generateSlug($project_form['name']);
         } else {
             $project_form['slug'] = $project['slug'];
@@ -99,6 +101,6 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('admin.projects.index')->with('is_deleted', "Il progetto $project->name è stato eliminato correttamente!");
+        return redirect()->route('admin.projects.index')->with('is_deleted', "Il progetto \"$project->name\" è stato eliminato correttamente!");
     }
 }

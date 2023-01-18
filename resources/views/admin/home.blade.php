@@ -18,7 +18,7 @@
                     </div>
                     @endif
 
-                    <h1>Benvenuta {{Auth::user()->name}}!</h1>
+                    <h1>Benvenuto {{Auth::user()->name}}!</h1>
                     <p>Il tuo indirizzo email è {{Auth::user()->email}}</p>
 
                 </div>
