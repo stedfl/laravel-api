@@ -22,15 +22,15 @@
                 </div>
                 <div class="mb-3">
                     <label for="summary" class="form-label">Riepilogo</label>
-                    <input type="text" class="form-control" name="summary" value="{{ old('summary') }}" id="summary"
-                        placeholder="Scrivi qui il riepilogo">
+                    <textarea class="form-control" name="summary" id="summary" placeholder="Scrivi qui il riepilogo">
+                    </textarea>
                 </div>
                 <div class="mb-3">
                     <label for="cover_image" class="form-label">Immagine</label>
                     <input type="text" class="form-control" name="cover_image" value="{{ old('cover_image') }}"
                         id="cover_image" placeholder="Scrivi l'url dell'immagine">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-info">Invia</button>
             </form>
         </div>
     </div>
