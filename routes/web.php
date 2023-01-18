@@ -23,9 +23,7 @@ Route::middleware(['auth', 'verified'])
     ->prefix('admin')
     ->group(function() {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-        Route::get('/new-article', function() {
-            return view('admin.new-article');
-        })->name('article');
+
     });
 
 Route::middleware('auth')->group(function () {
