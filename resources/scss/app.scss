@@ -25,6 +25,9 @@ header {
 main {
     height: calc(100vh - 57px);
     background-color: #f3f3f9;
+    .title {
+        color:#405189;
+    }
 }
 
 .show.container {

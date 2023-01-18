@@ -7,9 +7,9 @@
 @section('content')
     <div class="container-fluid h-100 d-flex justify-content-center">
         <div class="main-wrap w-75 h-100 py-4">
-            <div class="title d-flex align-items-center">
-                <h1 class="mb-3 me-5">Lista Progetti</h1>
-                <a class="btn btn-success" href="#"><i class="fa-solid fa-plus"></i></a>
+            <div class="title d-flex align-items-center mb-3">
+                <h1 class="me-5 fs-5">LISTA PROGETTI</h1>
+                <a class="btn btn-success" href="{{route('admin.projects.create')}}"><i class="fa-solid fa-plus"></i></a>
             </div>
             <table class=" table bg-white table-striped">
                 <thead>
@@ -26,14 +26,11 @@
                             <th scope="row">{{$project->id}}</th>
                             <td>{{$project->name}}</td>
                             <td>{{$project->client_name}}</td>
-                            <td>bottoni</td>
                             <td>
-                                <a class="btn btn-primary" title="show" href="{{route('admin.projects.show', $project->id)}}"><i
+                                <a class="btn btn-info" title="show" href="{{route('admin.projects.show', $project->id)}}"><i
                                         class="fa-solid fa-eye"></i></a>
                                 <a class="btn btn-warning" title="edit" href="#"><i
                                         class="fa-solid fa-pen"></i></i></a>
-
-
                             </td>
                         </tr>
                     @endforeach
