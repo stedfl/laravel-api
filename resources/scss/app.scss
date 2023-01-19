@@ -46,3 +46,16 @@ main {
         }
     }
 }
+
+.create-editing.container {
+    .ck-editor__editable[role="textbox"] {
+        /* editing area */
+        min-height: 100px;
+        max-height: 200px;
+    }
+    .ck-content .image {
+        /* block images */
+        max-width: 80%;
+        margin: 20px auto;
+    }
+}

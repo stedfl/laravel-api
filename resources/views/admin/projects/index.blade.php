@@ -23,7 +23,7 @@
                         <th scope="col"><a href="{{route('admin.projects.orderby', ['id', $direction])}}">ID</a></th>
                         <th scope="col"><a href="{{route('admin.projects.orderby', ['name', $direction])}}">Nome</a></th>
                         <th scope="col"><a href="{{route('admin.projects.orderby', ['client_name', $direction])}}">Cliente</a></th>
-                        <th scope="col">Azioni</th>
+                        <th class="text-primary" scope="col">Azioni</th>
                     </tr>
                 </thead>
                 <tbody>

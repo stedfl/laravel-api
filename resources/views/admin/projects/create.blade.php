@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container h-100 w-100 d-flex justify-content-center align-items-center p-3">
+    <div class="container h-100 w-100 d-flex justify-content-center align-items-center p-3 create-editing">
         <div class="main-wrap w-50">
             <h1 class="title">Nuovo Progetto</h1>
             @if ($errors->any())
@@ -38,7 +38,7 @@
                 <div class="mb-3">
                     <label for="summary" class="form-label">Riepilogo *</label>
                     <textarea class="form-control @error('summary') is-invalid @enderror" name="summary" id="summary"
-                        placeholder="Scrivi qui il riepilogo">{{ old('summary') }}</textarea>
+                        placeholder="Scrivi qui il riepilogo del progetto">{{ old('summary') }}</textarea>
                     @error('summary')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -56,4 +56,13 @@
             </form>
         </div>
     </div>
+
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#summary' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
+
 @endsection
