@@ -96,7 +96,7 @@ class ProjectController extends Controller
         }
         $project->update($project_form);
 
-        return redirect()->route('admin.projects.show', $project);
+        return redirect()->route('admin.projects.show', $project)->with('message', 'Progetto modificato correttamente!');
     }
 
     /**

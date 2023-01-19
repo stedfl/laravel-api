@@ -14,6 +14,9 @@
                 <a class="text-white " href="{{ route('admin.projects.index') }}"><i class="fa-solid fa-lightbulb">
                     </i> Progetti</a>
             </li>
+            <li class="my-2">
+                <a class="text-white " href="{{ route('admin.projects.create') }}"><i class="fa-solid fa-folder-plus"></i> Nuovo Progetto</a>
+            </li>
         </ul>
     </nav>
 </div>
