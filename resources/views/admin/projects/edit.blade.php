@@ -55,7 +55,7 @@
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-warning">Invia</button>
+                <button type="submit" class="btn btn-primary">Modifica</button>
                 <a class="btn btn-danger" href="{{ route('admin.projects.index') }}">Annulla e Torna alla Lista</a>
             </form>
         </div>

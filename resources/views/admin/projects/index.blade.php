@@ -17,14 +17,12 @@
                 </div>
             @endif
 
-
-
             <table class=" table bg-white table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Cliente</th>
+                        <th scope="col"><a href="{{route('admin.projects.orderby', ['id', $direction])}}">ID</a></th>
+                        <th scope="col"><a href="{{route('admin.projects.orderby', ['name', $direction])}}">Nome</a></th>
+                        <th scope="col"><a href="{{route('admin.projects.orderby', ['client_name', $direction])}}">Cliente</a></th>
                         <th scope="col">Azioni</th>
                     </tr>
                 </thead>

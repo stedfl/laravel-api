@@ -25,6 +25,7 @@ header {
 main {
     height: calc(100vh - 57px);
     background-color: #f3f3f9;
+    overflow-y: auto;
     .title {
         color:#405189;
     }
