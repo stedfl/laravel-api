@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container h-100 w-100 d-flex justify-content-center align-items-center p-3 create-editing">
+    <div class="container w-100 d-flex justify-content-center px-2 py-5 create-editing">
         <div class="main-wrap w-50">
             <h1 class="title text-capitalize fs-3">Modifica Progetto "{{ $project->name }}"</h1>
             @if ($errors->any())
@@ -48,13 +48,14 @@
                 </div>
                 <div class="mb-3">
                     <label for="cover_image" class="form-label">Immagine</label>
-                    <input type="file" onchange="showImage(event)" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image"
-                        id="cover_image">
+                    <input type="file" onchange="showImage(event)"
+                        class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" id="cover_image">
                     @error('cover_image')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                     <div class="thumb mt-2">
-                        <img id="thumb_upload" src="{{asset('storage/'. $project->cover_image)}}" alt="{{$project->image_original_name}}">
+                        <img id="thumb_upload" src="{{ asset('storage/' . $project->cover_image) }}"
+                            alt="{{ $project->image_original_name }}">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">Modifica</button>

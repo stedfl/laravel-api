@@ -19,13 +19,14 @@ class Project extends Model
         'image_original_name'
     ];
 
-    public static function generateSlug($string) {
+    public static function generateSlug($string)
+    {
         $slug = Str::slug($string, '-');
         $original_slug = $slug;
 
         $existing = Project::where('slug', $slug)->first();
         $c = 1;
-        while($existing) {
+        while ($existing) {
             $slug = $original_slug . '-' . $c;
             $existing = Project::where('slug', $slug)->first();
             $c++;

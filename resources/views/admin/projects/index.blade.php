@@ -29,9 +29,6 @@
                     </tr>
                 </thead>
                 <tbody>
-
-
-
                     @forelse ($projects as $project)
                         <tr>
                             <th scope="row">{{ $project->id }}</th>

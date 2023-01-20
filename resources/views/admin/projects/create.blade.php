@@ -5,9 +5,9 @@
 @endsection
 
 @section('content')
-    <div class="container h-100 w-100 d-flex justify-content-center align-items-center p-3 create-editing">
+    <div class="container w-100 d-flex justify-content-center px-2 py-5 create-editing">
         <div class="main-wrap w-50">
-            <h1 class="title">Nuovo Progetto</h1>
+            <h1 class="title fs-3">Nuovo Progetto</h1>
             @if ($errors->any())
                 <div class="alert alert-danger" role="alert">
                     <ul>
@@ -43,10 +43,10 @@
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mb-4">
+                <div class="mb-2">
                     <label for="cover_image" class="form-label">Immagine</label>
-                    <input type="file" onchange="showImage(event)" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image"
-                         id="cover_image">
+                    <input type="file" onchange="showImage(event)"
+                        class="form-control @error('cover_image') is-invalid @enderror" name="cover_image" id="cover_image">
                     @error('cover_image')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
@@ -62,10 +62,10 @@
 
     <script>
         ClassicEditor
-            .create( document.querySelector( '#summary' ) )
-            .catch( error => {
-                console.error( error );
-            } );
+            .create(document.querySelector('#summary'))
+            .catch(error => {
+                console.error(error);
+            });
 
         function showImage(event) {
             const tagImage = document.getElementById('thumb_upload');

@@ -37,11 +37,11 @@
                         @endif
                     @else
                         <li class="nav-item me-5">
-                            <form class="dropdown-item d-flex" action="{{route('admin.projects.index')}}" method="GET">
+                            <form class="dropdown-item d-flex" action="{{ route('admin.projects.index') }}" method="GET">
                                 @csrf
-                                <input type="text" class="form-control @error('client_name') is-invalid @enderror nav-link"
-                                    name="project_name" id="project_name"
-                                    placeholder="Cerca il progetto per nome">
+                                <input type="text"
+                                    class="form-control @error('client_name') is-invalid @enderror nav-link"
+                                    name="project_name" id="project_name" placeholder="Cerca il progetto per nome">
                                 <button type="submit" class="btn btn-info ms-2">Cerca</button>
                             </form>
                         </li>
