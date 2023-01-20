@@ -3,8 +3,8 @@
         <div class="container">
             @guest()
                 <a class="navbar-brand d-flex align-items-center" href="{{ route('admin.dashboard') }}">
-                    <div class="logo_laravel">
-                        LOGO
+                    <div class="logo">
+                        <img src="{{Vite::asset('resources/img/logo.png')}}" alt="logo">
                     </div>
                     {{-- config('app.name', 'Laravel') --}}
                 </a>

@@ -2,7 +2,7 @@
     <nav class="h-100 w-100 px-5 py-3">
         <a class="text-white text-center" href="{{ route('admin.dashboard') }}">
             <div class="logo">
-                LOGO
+                <img src="{{Vite::asset('resources/img/logo.png')}}" alt="logo">
             </div>
         </a>
         <ul class="p-0 mt-5">
