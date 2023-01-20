@@ -13,7 +13,11 @@
         @endif
 
         <div class="dc-card d-flex align-items-center">
-            <img src="{{ $project->cover_image }}" class="card-img-top" alt="{{ $project->name }}">
+            <div class="card-image">
+                <img src="{{asset('storage/'.$project->cover_image)}}" class="card-img-top" alt="{{ $project->image_original_name }}">
+                <i class="image-name">{{$project->image_original_name}}</i>
+            </div>
+
             <div class="card-body p-4">
                 <h5 class="card-title fw-bold text-center text-uppercase text-primary">{{ $project->name }}</h5>
                 <h6 class="mt-3 fw-semibold"><i class="fa-solid fa-book me-1"></i>Riepilogo:</h6>

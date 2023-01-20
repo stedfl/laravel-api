@@ -27,7 +27,7 @@ class ProjectRequest extends FormRequest
             'name'=>'required|min:2|max:150',
             'client_name'=>'required|min:3|max:50',
             'summary'=>'required|min:2|max:2000',
-            'cover_image'=>'required|url'
+            'cover_image'=>'nullable|image|max:32000'
         ];
     }
 
@@ -43,8 +43,8 @@ class ProjectRequest extends FormRequest
             'summary.required'=>'Il campo riepilogo è obbligatorio',
             'summary.min'=>'Il campo riepilogo richiede almeno :min caratteri',
             'summary.max'=>'Il campo riepilogo consente al massimo :max caratteri',
-            'cover_image.required'=>'Il campo immagine è obbligatorio',
-            'cover_image.url'=>'Il campo immagine richiede un URL valido',
+            'cover_image.image'=>'Il file caricato non è corretto',
+            'cover_image.max'=>'Il campo immagine consente il caricamento di un file al massimo di 3M',
         ];
     }
 }

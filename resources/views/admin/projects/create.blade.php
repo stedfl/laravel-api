@@ -17,7 +17,7 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('admin.projects.store') }}" method="POST">
+            <form action="{{ route('admin.projects.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome *</label>
@@ -43,13 +43,16 @@
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mb-3">
-                    <label for="cover_image" class="form-label">Immagine *</label>
-                    <input type="text" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image"
-                        value="{{ old('cover_image') }}" id="cover_image" placeholder="Scrivi l'url dell'immagine">
+                <div class="mb-4">
+                    <label for="cover_image" class="form-label">Immagine</label>
+                    <input type="file" onchange="showImage(event)" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image"
+                         id="cover_image" placeholder="Scrivi l'url dell'immagine">
                     @error('cover_image')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror
+                    <div class="thumb mt-2">
+                        <img id="thumb_upload" src="" alt="">
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-info">Invia</button>
                 <a class="btn btn-danger" href="{{ route('admin.projects.index') }}">Annulla e Torna alla Lista</a>
@@ -63,6 +66,11 @@
             .catch( error => {
                 console.error( error );
             } );
+
+        function showImage(event) {
+            const tagImage = document.getElementById('thumb_upload');
+            tagImage.src = URL.createObjectURL(event.target.files[0]);
+        }
     </script>
 
 @endsection
