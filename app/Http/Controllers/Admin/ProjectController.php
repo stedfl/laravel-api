@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -99,6 +100,15 @@ class ProjectController extends Controller
         } else {
             $project_form['slug'] = $project['slug'];
         }
+
+        if(array_key_exists('cover_image', $project_form)) {
+            if($project['cover_image']) {
+                Storage::disk('public')->delete($project['cover_image']);
+            }
+            $project_form['image_original_name'] = $request->file('cover_image')->getClientOriginalName();
+            $project_form['cover_image'] = Storage::put('uploads', $project_form['cover_image']);
+        }
+
         $project->update($project_form);
 
         return redirect()->route('admin.projects.show', $project)->with('message', 'Progetto modificato correttamente!');

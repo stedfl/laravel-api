@@ -32,7 +32,7 @@ main {
 }
 
 .show.container {
-    height: calc(100vh - 100px);
+    height: 100%;
     .dc-card {
         border-radius: 0.375rem;
         border: 2px solid rgba(0, 0, 0, 0.175);

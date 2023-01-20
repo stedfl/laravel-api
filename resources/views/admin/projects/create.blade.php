@@ -46,7 +46,7 @@
                 <div class="mb-4">
                     <label for="cover_image" class="form-label">Immagine</label>
                     <input type="file" onchange="showImage(event)" class="form-control @error('cover_image') is-invalid @enderror" name="cover_image"
-                         id="cover_image" placeholder="Scrivi l'url dell'immagine">
+                         id="cover_image">
                     @error('cover_image')
                         <span class="invalid-feedback">{{ $message }}</span>
                     @enderror

@@ -44,7 +44,7 @@ class ProjectRequest extends FormRequest
             'summary.min'=>'Il campo riepilogo richiede almeno :min caratteri',
             'summary.max'=>'Il campo riepilogo consente al massimo :max caratteri',
             'cover_image.image'=>'Il file caricato non è corretto',
-            'cover_image.max'=>'Il campo immagine consente il caricamento di un file al massimo di 3M',
+            'cover_image.max'=>'Il campo immagine consente il caricamento di un file al massimo di 3megabyte'
         ];
     }
 }
