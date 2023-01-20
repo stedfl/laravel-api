@@ -13,7 +13,7 @@
             </div>
             @if(session('is_deleted'))
                 <div class="alert alert-success" role="alert">
-                    {{session('is_deleted')}}
+                    {!!session('is_deleted')!!}
                 </div>
             @endif
 
