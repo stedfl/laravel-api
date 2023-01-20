@@ -38,12 +38,19 @@ main {
         border: 2px solid rgba(0, 0, 0, 0.175);
         .card-image {
             position: relative;
+            background-image: url('https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=');
+            background-position: center;
+            min-height: 400px;
+            max-height: 600px;
+            min-width: 500px;
+            overflow: hidden;
             img {
-                max-height: 500px;
+                max-height: 100%;
                 max-width: 100%;
                 object-fit: cover;
                 top: 0;
                 left: 0;
+                z-index: 998
             }
             .image-name {
                 position: absolute;
