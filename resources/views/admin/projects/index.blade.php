@@ -34,16 +34,23 @@
                             <th scope="row">{{ $project->id }}</th>
                             <td class="text-uppercase">
                                 {{ $project->name }}
-                                <span class="badge text-bg-secondary text-capitalize ms-2">{{$project->type?->name}}</span>
+                                <span
+                                    class="badge text-bg-secondary text-capitalize ms-2">{{ $project->type?->name }}</span>
                             </td>
-                            <td>{{ $project->client_name }}</td>
+                            <td class="text-capitalize">{{ $project->client_name }}</td>
                             <td>
                                 <a class="btn btn-info" title="show"
                                     href="{{ route('admin.projects.show', $project) }}"><i class="fa-solid fa-eye"></i></a>
                                 <a class="btn btn-warning" title="edit"
                                     href="{{ route('admin.projects.edit', $project) }}"><i
                                         class="fa-solid fa-pen"></i></i></a>
-                                @include('admin.partials.delete-form')
+
+                                @include('admin.partials.delete-form', [
+                                    'entity' => $project,
+                                    'title' => 'tipo di Progetto',
+                                    'message_modal' => "Confermi l'eliminazione del progetto <span class=\"fw-bolder text-capitalize\">$project->name</span>?",
+                                    'route' => 'projects',
+                                ])
                             </td>
                         </tr>
                     @empty

@@ -32,15 +32,23 @@
                 <tbody>
                     @foreach ($types as $type)
                         <tr>
-                            <td scope="row">
-                                <form class="d-flex w-50" action="{{ route('admin.types.update', $type) }}" method="post">
+                            <td class="d-flex">
+                                <form class="d-flex w-50 justify-content-between me-2"
+                                    action="{{ route('admin.types.update', $type) }}" method="post">
                                     @csrf
                                     @method('PATCH')
-                                    <input class="form-control border-0 w-75" type="text" name="name"
+                                    <input class="form-control border-0 w-75 text-capitalize" type="text" name="name"
                                         value="{{ $type->name }}">
                                     <button class="btn btn-warning ms-2" type="submit"><i
                                             class="fa-solid fa-pen-to-square"></i></button>
                                 </form>
+
+                                @include('admin.partials.delete-form', [
+                                    'entity' => $type,
+                                    'title' => 'tipo di Progetto',
+                                    'message_modal' => "Confermi l'eliminazione del progetto <span class=\"fw-bolder text-capitalize\">$type->name</span>?",
+                                    'route' => 'types',
+                                ])
                             </td>
                             <td>
                                 <span class="badge text-bg-success">{{ count($type->projects) }}</span>

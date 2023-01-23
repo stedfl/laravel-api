@@ -68,8 +68,9 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Type $type)
     {
-        //
+        $type->delete();
+        return redirect()->back()->with('message', "Il tipo <strong class=\"text-capitalize\">$type->name</strong> è stato eliminato correttamente");
     }
 }
