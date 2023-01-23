@@ -32,7 +32,10 @@
                     @forelse ($projects as $project)
                         <tr>
                             <th scope="row">{{ $project->id }}</th>
-                            <td class="text-uppercase">{{ $project->name }}</td>
+                            <td class="text-uppercase">
+                                {{ $project->name }}
+                                <span class="badge text-bg-secondary text-capitalize ms-2">{{$project->type->name}}</span>
+                            </td>
                             <td>{{ $project->client_name }}</td>
                             <td>
                                 <a class="btn btn-info" title="show"
