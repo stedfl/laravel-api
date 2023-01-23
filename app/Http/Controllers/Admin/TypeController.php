@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TypeController extends Controller
 {
@@ -15,7 +16,7 @@ class TypeController extends Controller
      */
     public function index()
     {
-        $types = Type::all();
+        $types = Type::orderBy('id', 'desc')->get();
         return view('admin.types.index', compact('types'));
     }
 
@@ -27,7 +28,16 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $form_val = $request->validate(
+            [
+                'name' => 'required|unique:types|min:3|max:50'
+            ]
+        );
+        $form_val['slug'] = Str::slug($form_val['name'], '-');
+        $form_name = $form_val['name'];
+        Type::create($form_val);
+
+        return redirect()->back()->with('message', "Tipo <strong class=\"text-capitalize\">$form_name</strong> aggiunto correttamente");
     }
 
     /**
