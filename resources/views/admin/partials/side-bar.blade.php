@@ -15,7 +15,10 @@
                     </i> Progetti</a>
             </li>
             <li class="my-2">
-                <a class="text-white " href="{{ route('admin.projects.projects_types') }}"><i class="fa-solid fa-flag"></i> Progetti per Tipo</a>
+                <a class="text-white " href="{{ route('admin.types.index') }}"><i class="fa-solid fa-flag"></i> Tipologie</a>
+            </li>
+            <li class="my-2">
+                <a class="text-white " href="{{ route('admin.projects.projects_types') }}"><i class="fa-solid fa-folder-open"></i> Progetti per Tipo</a>
             </li>
             <li class="my-2">
                 <a class="text-white " href="{{ route('admin.projects.create') }}"><i class="fa-solid fa-folder-plus"></i> Nuovo Progetto</a>

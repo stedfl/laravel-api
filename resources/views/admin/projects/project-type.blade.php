@@ -34,7 +34,7 @@
                                 </ul>
                             </td>
                         </tr>
-                    @endforeach ($projects as $project)
+                    @endforeach
                 </tbody>
             </table>
         </div>
