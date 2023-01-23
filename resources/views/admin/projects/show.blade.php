@@ -21,7 +21,7 @@
             <div class="card-body p-4">
                 <h5 class="card-title fw-bold text-center text-uppercase text-primary position-relative">
                     {{ $project->name }}
-                    <span class="badge rounded-pill bg-info text-capitalize">{{$project->type->name}}</span>
+                    <span class="badge rounded-pill bg-info text-capitalize">{{$project->type?->name}}</span>
                 </h5>
                 <h6 class="mt-3 fw-semibold"><i class="fa-solid fa-book me-1"></i>Riepilogo:</h6>
                 <p class="card-text">{!! $project->summary !!}</p>

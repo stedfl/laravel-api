@@ -28,6 +28,16 @@
                     @enderror
                 </div>
                 <div class="mb-3">
+                    <label for="type" class="form-label">Tipo </label>
+                    <select class="form-select" aria-label="Default select example" name='type_id'>
+                        <option value="">Selezionare tipo di progetto</option>
+                        @foreach ($types as $type)
+                            <option @if ($type->id == old('type_id')) selected @endif value="{{ $type->id }}" class="text-capitalize">
+                                {{ $type->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label for="client_name" class="form-label">Cliente *</label>
                     <input type="text" class="form-control @error('client_name') is-invalid @enderror" name="client_name"
                         value="{{ old('client_name') }}" id="client_name" placeholder="Scrivi qui il nome del cliente">
