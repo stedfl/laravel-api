@@ -30,6 +30,11 @@ class ProjectController extends Controller
         return view('admin.projects.index', compact('projects', 'direction'));
     }
 
+    public function projects_types() {
+        $types = Type::all();
+        return view('admin.projects.project-type', compact('types'));
+    }
+
     public function orderby($column, $direction) {
         $direction = $direction === 'desc' ? 'asc' : 'desc';
         $projects = Project::orderby($column, $direction)->paginate(10);
