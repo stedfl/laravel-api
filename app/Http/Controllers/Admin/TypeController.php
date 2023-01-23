@@ -47,9 +47,19 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Type $type)
     {
-        //
+        $form_val = $request->validate(
+            [
+                'name' => 'required|unique:types|max:50'
+            ]
+        );
+
+        $form_val['slug'] = Str::slug($form_val['name'], '-');
+        $form_name = $form_val['name'];
+        $type->update($form_val);
+
+        return redirect()->back()->with('message', "Tipo <strong class=\"text-capitalize\">$form_name</strong> modificato correttamente");
     }
 
     /**

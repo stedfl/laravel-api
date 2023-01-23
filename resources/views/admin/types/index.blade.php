@@ -33,7 +33,9 @@
                     @foreach ($types as $type)
                         <tr>
                             <td scope="row">
-                                <form class="d-flex w-50" action="" method="post">
+                                <form class="d-flex w-50" action="{{ route('admin.types.update', $type) }}" method="post">
+                                    @csrf
+                                    @method('PATCH')
                                     <input class="form-control border-0 w-75" type="text" name="name"
                                         value="{{ $type->name }}">
                                     <button class="btn btn-warning ms-2" type="submit"><i
