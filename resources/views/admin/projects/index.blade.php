@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <div class="container-fluid h-100 d-flex justify-content-center">
+    <div class="container-fluid h-100 d-flex justify-content-center index-proj">
         <div class="main-wrap w-75 h-100 py-4">
             <div class="title d-flex align-items-center mb-3">
                 <h1 class="me-5 fs-5">LISTA PROGETTI</h1>
@@ -23,6 +23,7 @@
                         <th scope="col"><a href="{{ route('admin.projects.orderby', ['id', $direction]) }}">ID</a></th>
                         <th scope="col"><a href="{{ route('admin.projects.orderby', ['name', $direction]) }}">Nome</a>
                         </th>
+                        <th scope="col">Tecnologie</th>
                         <th scope="col"><a
                                 href="{{ route('admin.projects.orderby', ['client_name', $direction]) }}">Cliente</a></th>
                         <th class="text-primary" scope="col">Azioni</th>
@@ -37,6 +38,17 @@
                                 <span
                                     class="badge text-bg-secondary text-capitalize ms-2">{{ $project->type?->name }}</span>
                             </td>
+
+                            <td>
+                                @forelse ($project->technologies as $technology)
+                                    <img class="thumb-tech ms-1" src="{{ $technology->thumb }}"
+                                        alt="{{ $technology->name }}" title="{{ $technology->name }}">
+                                @empty
+                                    n.d.
+                                @endforelse ($project->technologies)
+                            </td>
+
+
                             <td class="text-capitalize">{{ $project->client_name }}</td>
                             <td>
                                 <a class="btn btn-info" title="show"

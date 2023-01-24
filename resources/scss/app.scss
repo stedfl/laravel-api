@@ -35,6 +35,12 @@ main {
     }
 }
 
+.index-proj {
+    .thumb-tech {
+        height: 40px;
+    }
+}
+
 .show.container {
     height: 100%;
     .dc-card {
@@ -66,6 +72,9 @@ main {
 
         .card-body {
             min-width: 500px;
+            .logo-tech {
+                height: 40px;
+            }
         }
     }
 }

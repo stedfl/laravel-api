@@ -30,6 +30,19 @@
                     <li class="text-capitalize"><span class="fw-semibold"><i
                                 class="fa-solid fa-building me-1"></i>Cliente:</span> {{ $project->client_name }}</li>
                 </ul>
+
+
+                @if ($project->technologies)
+                    <h6 class="mt-3 mb-2 fw-semibold flex-wrap"><i class="fa-solid fa-gears me-1"></i>Tecnologie:</h6>
+                    <ul class="border-0 list-unstyled d-flex">
+                        @foreach ($project->technologies as $technology)
+                            <li class="me-2">
+                                <img class="logo-tech" src="{{ $technology->logo }}" alt="{{ $technology->name }}" title="{{$technology->name}}">
+                            </li>
+                        @endforeach
+                    </ul>
+                @endif
+
                 <div class="buttons mt-5">
                     <a class="btn btn-warning" title="edit" href="{{ route('admin.projects.edit', $project) }}"><i
                             class="fa-solid fa-pen"></i></i></a>
@@ -44,7 +57,8 @@
             </div>
         </div>
         <div class="actions my-4">
-            <a href="{{ route('admin.projects.index') }}" class="btn btn-primary"><i class="fa-solid fa-list me-1"></i>Lista
+            <a href="{{ route('admin.projects.index') }}" class="btn btn-primary"><i
+                    class="fa-solid fa-list me-1"></i>Lista
                 Progetti</a>
         </div>
     </div>
