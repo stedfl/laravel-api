@@ -2,6 +2,7 @@
 
 a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 ul {
@@ -38,6 +39,18 @@ main {
 .index-proj {
     .thumb-tech {
         height: 40px;
+    }
+}
+
+.index-tech {
+    img {
+        height: 40px;
+    }
+    td {
+        height: 60px;
+    }
+    .form-name {
+        width: 300px;
     }
 }
 

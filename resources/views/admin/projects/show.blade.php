@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    |Admin - Dettaglio
+    | Admin - Dettaglio
 @endsection
 
 @section('content')
@@ -37,7 +37,8 @@
                     <ul class="border-0 list-unstyled d-flex">
                         @foreach ($project->technologies as $technology)
                             <li class="me-2">
-                                <img class="logo-tech" src="{{ $technology->logo }}" alt="{{ $technology->name }}" title="{{$technology->name}}">
+                                <img class="logo-tech" src="{{ $technology->logo }}" alt="{{ $technology->name }}"
+                                    title="{{ $technology->name }}">
                             </li>
                         @endforeach
                     </ul>

@@ -13,7 +13,6 @@
             </div>
             <div class="modal-body">
                 {!! $message_modal !!}
-                {{-- Confermi l'eliminazione del progetto <span class="fw-bolder text-capitalize">{{ $project->name }}</span>? --}}
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
