@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
@@ -50,7 +51,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -70,6 +72,10 @@ class ProjectController extends Controller
         $new_project = new Project();
         $new_project->fill($project_form);
         $new_project->save();
+
+        if(array_key_exists('technologies', $project_form)) {
+            $new_project->technologies()->attach($project_form['technologies']);
+        }
 
         return redirect()->route('admin.projects.show', $new_project);
     }
@@ -96,7 +102,8 @@ class ProjectController extends Controller
     public function edit(Project $project, Type $type)
     {
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        $technologies = Technology::all();
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -124,6 +131,12 @@ class ProjectController extends Controller
         }
 
         $project->update($project_form);
+
+        if(array_key_exists('technologies', $project_form)) {
+            $project->technologies()->sync($project_form['technologies']);
+        }else {
+            $project->technologies()->detach();
+        }
 
         return redirect()->route('admin.projects.show', $project)->with('message', 'Progetto modificato correttamente!');
     }

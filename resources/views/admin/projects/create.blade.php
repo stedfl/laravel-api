@@ -32,10 +32,27 @@
                     <select class="form-select" aria-label="Default select example" name='type_id'>
                         <option value="">Selezionare tipo di progetto</option>
                         @foreach ($types as $type)
-                            <option @if ($type->id == old('type_id')) selected @endif value="{{ $type->id }}" class="text-capitalize">
+                            <option @if ($type->id == old('type_id')) selected @endif value="{{ $type->id }}"
+                                class="text-capitalize">
                                 {{ $type->name }}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="mb-3">
+                    <label for="technology" class="form-label">Tecnologie</label>
+                    <div>
+                        @foreach ($technologies as $technology)
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="{{ $technology->slug }}"
+                                    value="{{ $technology->id }}" name="technologies[]"
+                                    @if(in_array($technology->id, old('technologies', [])))
+                                        checked
+                                    @endif>
+                                <label class="form-check-label"
+                                    for="{{ $technology->slug }}">{{ $technology->name }}</label>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="client_name" class="form-label">Cliente *</label>
