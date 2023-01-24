@@ -31,9 +31,8 @@
                                 class="fa-solid fa-building me-1"></i>Cliente:</span> {{ $project->client_name }}</li>
                 </ul>
 
-
-                @if ($project->technologies)
-                    <h6 class="mt-3 mb-2 fw-semibold flex-wrap"><i class="fa-solid fa-gears me-1"></i>Tecnologie:</h6>
+                @if (count($project->technologies))
+                    <h6 class="mt-3 mb-3 fw-semibold flex-wrap"><i class="fa-solid fa-gears me-1"></i>Tecnologie:</h6>
                     <ul class="border-0 list-unstyled d-flex">
                         @foreach ($project->technologies as $technology)
                             <li class="me-2">
