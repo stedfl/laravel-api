@@ -57,7 +57,7 @@ class TechnologyController extends Controller
 
         if(array_key_exists('name', $form_val)) {
             $form_val['slug'] = Str::slug($form_val['name'], '-');
-            $output_message = 'Nome di ' . $form_val['name'];
+            $output_message = $form_val['name'];
         } else {
             $output_message = 'Immagine di ' . $technology->name;
         }

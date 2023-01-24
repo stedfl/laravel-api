@@ -58,7 +58,7 @@
                                     @method('PATCH')
                                     <input class="form-control border-0 w-75 text-capitalize" type="text" name="name"
                                         value="{{ $technology->name }}">
-                                    <button class="btn btn-warning ms-2" type="submit"><i
+                                    <button class="text-warning ms-2 p-0 border-0 bg-white" type="submit"><i
                                             class="fa-solid fa-pen-to-square"></i></button>
                                 </form>
                             </td>
