@@ -21,10 +21,14 @@ header {
 
 .side-bar {
     background-color: #405189;
-}
-
-.side-bar {
     height: 100vh;
+    li.active {
+        background-color: lighten(#405189, 10%);
+
+        a.active {
+            color: #23a8e0;
+        }
+    }
 }
 
 main {

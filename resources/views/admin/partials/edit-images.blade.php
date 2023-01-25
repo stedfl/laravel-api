@@ -4,7 +4,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modifica {{ "$entity: $technology->name" }}</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">{{(is_null($technology->$entity) ? 'Aggiungi' : 'Modifica') . ' ' . ($entity == 'thumb' ? 'la miniatura' : 'il logo') .' di '}} <span class="text-capitalize fw-bolder">{{$technology->name }}</span> </h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="{{ route('admin.technologies.update', $technology) }}" method="POST">
