@@ -41,8 +41,13 @@
 
                             <td>
                                 @forelse ($project->technologies as $technology)
-                                    <img class="thumb-tech ms-1" src="{{ $technology->thumb }}"
-                                        alt="{{ $technology->name }}" title="{{ $technology->name }}">
+                                    @if (is_null($technology->thumb))
+                                        <span
+                                            class="badge rounded-pill text-bg-success ms-1 text-capitalize">{{ $technology->name }}</span>
+                                    @else
+                                        <img class="thumb-tech ms-1" src="{{ $technology->thumb }}"
+                                            alt="{{ $technology->name }}" title="{{ $technology->name }}">
+                                    @endif
                                 @empty
                                     n.d.
                                 @endforelse ($project->technologies)

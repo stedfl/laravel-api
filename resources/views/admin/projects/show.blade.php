@@ -33,11 +33,16 @@
 
                 @if (count($project->technologies))
                     <h6 class="mt-3 mb-3 fw-semibold flex-wrap"><i class="fa-solid fa-gears me-1"></i>Tecnologie:</h6>
-                    <ul class="border-0 list-unstyled d-flex">
+                    <ul class="border-0 list-unstyled d-flex align-items-center">
                         @foreach ($project->technologies as $technology)
                             <li class="me-2">
-                                <img class="logo-tech" src="{{ $technology->logo }}" alt="{{ $technology->name }}"
-                                    title="{{ $technology->name }}">
+                                @if (is_null($technology->logo))
+                                    <h4
+                                        class="badge rounded-pill text-bg-success ms-1 mb-0 text-capitalize">{{ $technology->name }}</h4>
+                                @else
+                                    <img class="logo-tech" src="{{ $technology->logo }}" alt="{{ $technology->name }}"
+                                        title="{{ $technology->name }}">
+                                @endif
                             </li>
                         @endforeach
                     </ul>
