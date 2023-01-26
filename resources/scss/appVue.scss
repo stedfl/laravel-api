@@ -1,0 +1,44 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #405189;
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.container {
+  width: 70%;
+  overflow: auto;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.main-wrap {
+  .cards-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .pagination {
+    button {
+      padding: 10px 15px;
+      background-color: white;
+      border: 0;
+      margin-left: 5px;
+      border-radius: 5px;
+      color: #405189;
+      font-weight: 600;
+      &.clicked {
+        background-color: #add8e6;
+      }
+    }
+  }
+}
