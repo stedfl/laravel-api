@@ -25,4 +25,3 @@ Route::namespace('Api')
         Route::get('/', [ProjectController::class, 'index']);
         Route::get('/{slug}', [ProjectController::class, 'show']);
     });
-
