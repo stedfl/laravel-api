@@ -38,4 +38,14 @@ class ProjectController extends Controller
         $projects = Project::where('type_id', $id)->with(['type', 'technologies'])->get();
         return response()->json(compact('projects'));
     }
+
+    public function getByTechnology($id) {
+        $projects = [];
+        $technology = Technology::where('id', $id)->with('projects')->first();
+        foreach($technology->projects as $project) {
+            $projects[] = Project::where('id', $project->id)->with(['type', 'technologies'])->first();
+        }
+
+        return response()->json(compact('projects'));
+    }
 }
