@@ -33,4 +33,9 @@ class ProjectController extends Controller
         $projects = Project::where('name', 'like', "%$search%")->with(['type', 'technologies'])->get();
         return response()->json(compact('projects'));
     }
+
+    public function getByType($id) {
+        $projects = Project::where('type_id', $id)->with(['type', 'technologies'])->get();
+        return response()->json(compact('projects'));
+    }
 }
